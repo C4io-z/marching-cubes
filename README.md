@@ -1,5 +1,6 @@
 # marching-cubes
 gerador de merching cubes com  interpolação, texturização, remoção de vertices duplicados e alizamento de normals
+(explicação e exemplos em breve...)
 
 ```cpp
  marchingCubes(vec3 pos, vec3 size); 
