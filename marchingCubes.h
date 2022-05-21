@@ -6,6 +6,7 @@
 #include <string>
 #include <thread>
 #include "qucksort.h"
+#include "structs.h"
 
 class marchingCubes{
 
