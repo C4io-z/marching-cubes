@@ -1,6 +1,11 @@
 # marching-cubes
-gerador de merching cubes com  interpolação, texturização, remoção de vertices duplicados e alizamento de normals
-(explicação e exemplos em breve...)
+gerador de merching cubes com  interpolação, texturização, remoção de vertices duplicados e alizamento de normal
+próximas melhorias: 
+efeito low poly mmesmo removendo vertices duplicados.
+armazenar texturas em um array estático, assim todas as estâncias da classe possuem as mesmas texturas.
+alisamento de normals nas fronteiras entre as chunks.
+sistema de LOD(level of detail, nível de detalhe) com transvoxel.
+otimização na geração de malha para detecção de colisão com AABB. 
 
 ```cpp
 class marchingCubes{
@@ -70,7 +75,7 @@ exemplo de uso:
 
 int main(){
     marchingCubes cube(vec3(0,0,0), vec3(32,32,32);
-    cube.setIsoLevel(50);///quanto maior o iso level maior o nivel de detalha, mas também é necessario aumentar os valores gerados para os pontos.
+    cube.setIsoLevel(50);///quanto maior o iso level maior o nivel de detalhe, mas também é necessario aumentar os valores gerados para os pontos.
     cube.setMaterial(ID)/// gerar um "ID" de textura com opengl primeiro. podem ser adicionadas mais texturas, elas ficam salvas na oredem que foram adicionadas.
     for(int x = 0; x < 32; x++){
         for(int y = 0; y < 32; y++){
@@ -82,7 +87,7 @@ int main(){
     cube.create(); 
     cube.weldVertices(); /// remove vertices duplicados(até 24 vertices identicos podem ser gerados), ele é opcional e tira o efeito low-poly da malha(com textura fica menos aparente os erros de sombreamento devido faces muito pequenas que são geradas).
     cube.calcNormals(); 
-    cube.createTexture(); /// estes processo devem ser feitos nessa ordem(os opcionais não podem ser chamados depois). também pode ser usada a função recreate() para isto mesmo na primeira vez de criação.
+    cube.createTexture(); /// estes processo devem ser feitos nessa ordem(os opcionais não podem ser chamados depois). também pode ser usada a função recreate() para isto mesmo na primeira vez de criação. a função recreate() executa todos os processos, até os opcionais.
     
     while(true){
         cube.drawMeshTri();/// renderiza a malha.
