@@ -1,11 +1,14 @@
 # marching-cubes
-gerador de merching cubes com  interpolação, texturização, remoção de vertices duplicados e alizamento de normal
-próximas melhorias: 
-efeito low poly mmesmo removendo vertices duplicados.
-armazenar texturas em um array estático, assim todas as estâncias da classe possuem as mesmas texturas.
-alisamento de normals nas fronteiras entre as chunks.
-sistema de LOD(level of detail, nível de detalhe) com transvoxel.
-otimização na geração de malha para detecção de colisão com AABB. 
+```cpp
+gerador de merching cubes com  interpolação, texturização, remoção de vertices duplicados e alizamento de normal.
+
+Próximas melhorias:  
+Efeito low poly mmesmo removendo vertices duplicados.
+Armazenar texturas em um array estático, assim todas as estâncias da classe possuem as mesmas texturas.
+Alisamento de normals nas fronteiras entre as chunks.
+Sistema de LOD(level of detail, nível de detalhe) com transvoxel.
+Otimização na geração de malha para detecção de colisão com AABB. 
+```
 
 ```cpp
 class marchingCubes{
