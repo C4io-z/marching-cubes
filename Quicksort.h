@@ -18,3 +18,4 @@ class quicksort{
         void Quicksort();
         void print();
 };
+#endif
